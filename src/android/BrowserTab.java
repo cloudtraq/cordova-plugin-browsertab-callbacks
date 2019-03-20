@@ -62,7 +62,8 @@ public class BrowserTab extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
     Log.d(LOG_TAG, "executing " + action);
     if ("isAvailable".equals(action)) {
-      return isAvailable(callbackContext);
+      isAvailable(callbackContext);
+      return true; // just for sake of type conformity
     } else if ("openUrl".equals(action)) {
       return openUrl(args, callbackContext);
     } else if ("close".equals(action)) {
