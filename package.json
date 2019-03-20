@@ -1,19 +1,31 @@
 {
-    "name": "cordova-plugin-browsertab",
-    "version": "0.2.1",
-    "description": "In-app browser tabs for Android and iOS",
-    "cordova": {
-        "id": "cordova-plugin-browsertab",
-        "platforms": [
-            "android"
-        ]
-    },
-    "keywords": [
-        "sfsafariviewcontroller",
-        "custom-tabs",
-        "browser-tabs",
-        "browser"
-    ],
-    "author": "Google, Inc.",
-    "license": "Apache-2.0"
+  "name": "cordova-plugin-browsertab",
+  "version": "0.2.1",
+  "description": "In-app browser tabs for Android and iOS",
+  "cordova": {
+    "id": "cordova-plugin-browsertab",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "sfsafariviewcontroller",
+    "custom-tabs",
+    "browser-tabs",
+    "browser"
+  ],
+  "author": "Google, Inc.",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudtraq/cordova-plugin-browsertab-callbacks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cloudtraq/cordova-plugin-browsertab-callbacks/issues"
+  },
+  "homepage": "https://github.com/cloudtraq/cordova-plugin-browsertab-callbacks#readme"
 }
