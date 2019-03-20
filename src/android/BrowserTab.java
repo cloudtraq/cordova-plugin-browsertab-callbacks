@@ -81,7 +81,7 @@ public class BrowserTab extends CordovaPlugin {
     callbackContext.sendPluginResult(new PluginResult(
         PluginResult.Status.OK,
         browserPackage != null));
-    callbackContext.success(true);
+    //callbackContext.success(true);
   }
 
   private boolean openUrl(JSONArray args, CallbackContext callbackContext) {
@@ -120,7 +120,7 @@ public class BrowserTab extends CordovaPlugin {
     customTabsIntent.launchUrl(cordova.getActivity(), Uri.parse(urlStr));
 
     Log.d(LOG_TAG, "in app browser call dispatched");
-    callbackContext.success();
+    //callbackContext.success();
     return true;
   }
 
