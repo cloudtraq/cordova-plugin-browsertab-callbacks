@@ -1,5 +1,8 @@
-# cordova-plugin-browsertab
+# cordova-plugin-browsertab-callbacks
 
+Note: Modified by CloudTraq Inc. Forked from [https://github.com/google/cordova-plugin-browsertab](https://github.com/google/cordova-plugin-browsertab)
+
+---------------------------
 Note: This is not an official Google product.
 
 ## About
