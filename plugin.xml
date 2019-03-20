@@ -22,17 +22,17 @@
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="BrowserTab">
                 <param name="android-package"
-                    value="com.google.cordova.plugin.browsertab.BrowserTab" />
+                    value="com.cloudtraq.cordova.plugin.browsertab.BrowserTab" />
             </feature>
         </config-file>
         <source-file src="src/android/BrowserTab.java"
-            target-dir="src/com/google/cordova/plugin" />
+            target-dir="src/com/cloudtraq/cordova/plugin" />
         <framework src="com.android.support:customtabs:23.3.0"/>
         <framework src="src/android/BrowserTab.gradle" custom="true" type="gradleReference"/>
   
         <source-file src="src/android/res/browsertab.xml" target-dir="res/values" />
         <config-file target="res/values/browsertab.xml" parent="/*">
-          <string name="CUSTOM_TAB_COLOR_RGB">$CUSTOM_TAB_COLOR_RGB</string>
+          <string name="CUSTOM_TAB_COLOR_RGB">#3a3b9e</string>
         </config-file>
     </platform>
 
