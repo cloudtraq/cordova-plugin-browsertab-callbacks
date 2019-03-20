@@ -22,7 +22,7 @@ exports.isAvailable = function(success, error) {
 };
 
 exports.openUrl = function(url, opt_success, opt_error) {
-	console.log('browsertab.js openUrl called')
+	console.log('browsertab.js openUrl called', opt_success, opt_error)
   var error = (!opt_error) ? doNothing : opt_error;
 	var success = (!opt_success) ? doNothing : opt_success;
   return exec(success, error, 'BrowserTab', 'openUrl', [url]);

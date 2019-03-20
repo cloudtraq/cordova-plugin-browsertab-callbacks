@@ -84,42 +84,43 @@ public class BrowserTab extends CordovaPlugin {
   }
 
   private void openUrl(JSONArray args, CallbackContext callbackContext) {
-    if (args.length() < 1) {
-      Log.d(LOG_TAG, "openUrl: no url argument received");
-      callbackContext.error("URL argument missing");
-      return;
-    }
+    //if (args.length() < 1) {
+    //  Log.d(LOG_TAG, "openUrl: no url argument received");
+   //   callbackContext.error("URL argument missing");
+    //  return;
+    //}
+    callbackContext.success();
 
-    String urlStr;
-    try {
-      urlStr = args.getString(0);
-    } catch (JSONException e) {
-      Log.d(LOG_TAG, "openUrl: failed to parse url argument");
-      callbackContext.error("URL argument is not a string");
-      return;
-    }
-
-    String customTabsBrowser = findCustomTabBrowser();
-    if (customTabsBrowser == null) {
-      Log.d(LOG_TAG, "openUrl: no in app browser tab available");
-      callbackContext.error("no in app browser tab implementation available");
-    }
-
-    // Initialize Builder
-    CustomTabsIntent.Builder customTabsIntentBuilder = new CustomTabsIntent.Builder();
-
-    // Set tab color
-    String tabColor = cordova.getActivity().getString(cordova.getActivity().getResources().getIdentifier("CUSTOM_TAB_COLOR_RGB", "string", cordova.getActivity().getPackageName()));
-    customTabsIntentBuilder.setToolbarColor(colorParser.parseColor(tabColor));
+    //String urlStr;
+    //try {
+      //urlStr = args.getString(0);
+    //} catch (JSONException e) {
+      //Log.d(LOG_TAG, "openUrl: failed to parse url argument");
+      //callbackContext.error("URL argument is not a string");
+      //return;
+    //}
+//
+    //String customTabsBrowser = findCustomTabBrowser();
+    //if (customTabsBrowser == null) {
+      //Log.d(LOG_TAG, "openUrl: no in app browser tab available");
+      //callbackContext.error("no in app browser tab implementation available");
+    //}
+//
+    //// Initialize Builder
+    //CustomTabsIntent.Builder customTabsIntentBuilder = new CustomTabsIntent.Builder();
+//
+    //// Set tab color
+    ////////////////String tabColor = cordova.getActivity().getString(cordova.getActivity().getResources().getIdentifier("CUSTOM_TAB_COLOR_RGB", "string", cordova.getActivity().getPackageName()));
+    //customTabsIntentBuilder.setToolbarColor(colorParser.parseColor(tabColor));
 
     // Create Intent
-    CustomTabsIntent customTabsIntent = customTabsIntentBuilder.build();
+    //CustomTabsIntent customTabsIntent = customTabsIntentBuilder.build();
 
     // Load URL
-    customTabsIntent.launchUrl(cordova.getActivity(), Uri.parse(urlStr));
+    //customTabsIntent.launchUrl(cordova.getActivity(), Uri.parse(urlStr));
 
-    Log.d(LOG_TAG, "in app browser call dispatched");
-    callbackContext.success();
+    //Log.d(LOG_TAG, "in app browser call dispatched");
+    //callbackContext.success();
   }
 
   private String findCustomTabBrowser() {
