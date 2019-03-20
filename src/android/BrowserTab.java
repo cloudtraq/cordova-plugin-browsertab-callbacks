@@ -72,10 +72,10 @@ public class BrowserTab extends CordovaPlugin {
       return false;
     }
 
-    return true;
+    //return true;
   }
 
-  private boolean isAvailable(CallbackContext callbackContext) {
+  private void isAvailable(CallbackContext callbackContext) {
     String browserPackage = findCustomTabBrowser();
     Log.d(LOG_TAG, "browser package: " + browserPackage);
     callbackContext.sendPluginResult(new PluginResult(
