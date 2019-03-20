@@ -14,18 +14,23 @@
 
 var exec = require('cordova/exec');
 
+//TODO: promisify these functions
+var doNothing = function() {};
 exports.isAvailable = function(success, error) {
-  exec(success, error, 'BrowserTab', 'isAvailable', []);
+	console.log('browsertab.js isAvailable called')
+  return exec(success, error, 'BrowserTab', 'isAvailable', []);
 };
 
-exports.openUrl = function(url, opt_error) {
-  var doNothing = function() {};
+exports.openUrl = function(url, opt_success, opt_error) {
+	console.log('browsertab.js openUrl called')
   var error = (!opt_error) ? doNothing : opt_error;
-  exec(doNothing, error, 'BrowserTab', 'openUrl', [url]);
+	var success = (!opt_success) ? doNothing : opt_success;
+  return exec(success, error, 'BrowserTab', 'openUrl', [url]);
 };
 
-exports.close = function(opt_error) {
-  var doNothing = function() {};
+exports.close = function(opt_success, opt_error) {
+	console.log('browsertab.js close called')
+	var success = (!opt_success) ? doNothing : opt_success;
   var error = (!opt_error) ? doNothing : opt_error;
-  exec(doNothing, error, 'BrowserTab', 'close', []);
+  return exec(success, error, 'BrowserTab', 'close', []);
 };

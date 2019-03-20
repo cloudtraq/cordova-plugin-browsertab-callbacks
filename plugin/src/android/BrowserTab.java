@@ -62,9 +62,9 @@ public class BrowserTab extends CordovaPlugin {
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
     Log.d(LOG_TAG, "executing " + action);
     if ("isAvailable".equals(action)) {
-      isAvailable(callbackContext);
+      return isAvailable(callbackContext);
     } else if ("openUrl".equals(action)) {
-      openUrl(args, callbackContext);
+      return openUrl(args, callbackContext);
     } else if ("close".equals(action)) {
       // close is a NOP on Android
       return true;
@@ -75,19 +75,20 @@ public class BrowserTab extends CordovaPlugin {
     return true;
   }
 
-  private void isAvailable(CallbackContext callbackContext) {
+  private boolean isAvailable(CallbackContext callbackContext) {
     String browserPackage = findCustomTabBrowser();
     Log.d(LOG_TAG, "browser package: " + browserPackage);
     callbackContext.sendPluginResult(new PluginResult(
         PluginResult.Status.OK,
         browserPackage != null));
+    callbackContext.success(true);
   }
 
-  private void openUrl(JSONArray args, CallbackContext callbackContext) {
+  private boolean openUrl(JSONArray args, CallbackContext callbackContext) {
     if (args.length() < 1) {
       Log.d(LOG_TAG, "openUrl: no url argument received");
       callbackContext.error("URL argument missing");
-      return;
+      return true;
     }
 
     String urlStr;
@@ -96,7 +97,7 @@ public class BrowserTab extends CordovaPlugin {
     } catch (JSONException e) {
       Log.d(LOG_TAG, "openUrl: failed to parse url argument");
       callbackContext.error("URL argument is not a string");
-      return;
+      return false;
     }
 
     String customTabsBrowser = findCustomTabBrowser();
@@ -120,6 +121,7 @@ public class BrowserTab extends CordovaPlugin {
 
     Log.d(LOG_TAG, "in app browser call dispatched");
     callbackContext.success();
+    return true;
   }
 
   private String findCustomTabBrowser() {

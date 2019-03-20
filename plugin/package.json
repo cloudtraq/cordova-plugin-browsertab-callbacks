@@ -1,9 +1,9 @@
 {
-    "name": "cordova-plugin-browsertab",
-    "version": "0.2.1",
+    "name": "cordova-plugin-browsertab-callbacks",
+    "version": "0.3.1",
     "description": "In-app browser tabs for Android and iOS",
     "cordova": {
-        "id": "cordova-plugin-browsertab",
+        "id": "cordova-plugin-browsertab-callbacks",
         "platforms": [
             "android"
         ]
@@ -14,6 +14,6 @@
         "browser-tabs",
         "browser"
     ],
-    "author": "Google, Inc.",
+    "author": "CloudTraq, Inc; Google, Inc.",
     "license": "Apache-2.0"
 }
