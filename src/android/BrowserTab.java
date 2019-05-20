@@ -45,7 +45,7 @@ public class BrowserTab extends CordovaPlugin {
 
   public static final int RC_OPEN_URL = 101;
 
-  private static final String LOG_TAG = "BrowserTab";
+  private static final String LOG_TAG = "BrowserTabJohn";
 
   private Color colorParser = new Color();
 
@@ -77,7 +77,7 @@ public class BrowserTab extends CordovaPlugin {
 
   private void isAvailable(CallbackContext callbackContext) {
     String browserPackage = findCustomTabBrowser();
-    Log.d(LOG_TAG, "browser package: " + browserPackage);
+    Log.d(LOG_TAG, "browser package: john edit: " + browserPackage);
     callbackContext.sendPluginResult(new PluginResult(
         PluginResult.Status.OK,
         browserPackage != null));
